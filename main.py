@@ -39,9 +39,18 @@ def func(message):
 
 
     elif (message.text == "Mobile App Developer"):
-        bot.send_message(message.chat.id, "Тут надо добавить список навыков")
+        bot.send_message(message.chat.id, "Добавить навыки")
 
     elif message.text == "WEB Developer":
+        bot.send_message(message.chat.id, text="Добавить навыки")
+
+    elif message.text == "Database Administrator":
+        bot.send_message(message.chat.id, text="Добавить навыки")
+
+    elif message.text == "Machine learning":
+        bot.send_message(message.chat.id, text="Добавить навыки")
+
+    elif message.text == "Information Security":
         bot.send_message(message.chat.id, text="Добавить навыки")
 
     elif (message.text == "Вернуться в главное меню"):
@@ -49,9 +58,9 @@ def func(message):
         button1 = types.KeyboardButton("👋 Поздороваться")
         button2 = types.KeyboardButton("👨‍💻 Выбрать направление")
         markup.add(button1, button2)
-        bot.send_message(message.chat.id, text="Вы вернулись в главное меню", reply_markup=markup)
+        bot.send_message(message.chat.id, text="Попробуй что-то ещё, вдруг понравиться!", reply_markup=markup)
     else:
-        bot.send_message(message.chat.id, text="На такую комманду я не запрограммировал..")
+        bot.send_message(message.chat.id, text="На такую комманду я не запрограммирован...")
 
 
 bot.polling(none_stop=True)
