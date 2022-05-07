@@ -39,7 +39,12 @@ def func(message):
 
 
     elif (message.text == "Mobile App Developer"):
-        bot.send_message(message.chat.id, "Добавить навыки")
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        mad1 = types.KeyboardButton("Давай!")
+        mad2 = types.KeyboardButton("Нет!")
+        markup.add(mad1, mad2)
+        bot.send_message(message.chat.id, text="Давай покажу тебе список навыков, которые нужны этому специалисту?", reply_markup=markup)
+
 
     elif message.text == "WEB Developer":
         bot.send_message(message.chat.id, text="Добавить навыки")
