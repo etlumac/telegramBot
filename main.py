@@ -2,10 +2,11 @@ import telebot
 from common_data import *
 import telebot
 from telebot import types  # для указание типов
-import config
+
 
 
 bot = telebot.TeleBot(token=token)
+
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -36,27 +37,40 @@ def func(message):
         bot.send_message(message.chat.id, text="Смотри сколько всего интересного", reply_markup=markup)
 
 
-
-
     elif (message.text == "Mobile App Developer"):
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-        mad1 = types.KeyboardButton("Давай!")
-        mad2 = types.KeyboardButton("Нет!")
-        markup.add(mad1, mad2)
-        bot.send_message(message.chat.id, text="Давай покажу тебе список навыков, которые нужны этому специалисту?", reply_markup=markup)
+        markup = types.InlineKeyboardMarkup()
+        btn_my_site = types.InlineKeyboardButton(text='🔗', url='https://habrahabr.ru')
+        markup.add(btn_my_site)
+        bot.send_message(message.chat.id, "Давай покажу тебе, что нужно этому специалисту? По ссылке ты найдёшь всю информацию, удачи!", reply_markup=markup)
 
 
-    elif message.text == "WEB Developer":
-        bot.send_message(message.chat.id, text="Добавить навыки")
+    elif (message.text == "WEB Developer"):
+        markup = types.InlineKeyboardMarkup()
+        btn_my_site = types.InlineKeyboardButton(text='🔗', url='https://habrahabr.ru')
+        markup.add(btn_my_site)
+        bot.send_message(message.chat.id, "Давай покажу тебе, что нужно этому специалисту? По ссылке ты найдёшь всю информацию, удачи!", reply_markup=markup)
 
-    elif message.text == "Database Administrator":
-        bot.send_message(message.chat.id, text="Добавить навыки")
 
-    elif message.text == "Machine learning":
-        bot.send_message(message.chat.id, text="Добавить навыки")
+    elif (message.text == "Database Administrator"):
+        markup = types.InlineKeyboardMarkup()
+        btn_my_site = types.InlineKeyboardButton(text='🔗', url='https://habrahabr.ru')
+        markup.add(btn_my_site)
+        bot.send_message(message.chat.id, "Давай покажу тебе, что нужно этому специалисту? По ссылке ты найдёшь всю информацию, удачи!", reply_markup=markup)
+
+
+    elif (message.text == "Machine learning"):
+        markup = types.InlineKeyboardMarkup()
+        btn_my_site = types.InlineKeyboardButton(text='🔗', url='https://habrahabr.ru')
+        markup.add(btn_my_site)
+        bot.send_message(message.chat.id, "Давай покажу тебе, что нужно этому специалисту? По ссылке ты найдёшь всю информацию, удачи!", reply_markup=markup)
+
 
     elif message.text == "Information Security":
-        bot.send_message(message.chat.id, text="Добавить навыки")
+        markup = types.InlineKeyboardMarkup()
+        btn_my_site = types.InlineKeyboardButton(text='🔗', url='https://habrahabr.ru')
+        markup.add(btn_my_site)
+        bot.send_message(message.chat.id, "Давай покажу тебе, что нужно этому специалисту? По ссылке ты найдёшь всю информацию, удачи!", reply_markup=markup)
+
 
     elif (message.text == "Вернуться в главное меню"):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -69,10 +83,6 @@ def func(message):
 
 
 bot.polling(none_stop=True)
-
-
-
-
 
 
 #bot = telebot.TeleBot(token=token)
