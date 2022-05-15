@@ -3,8 +3,6 @@ from common_data import *
 import telebot
 from telebot import types  # для указание типов
 
-
-
 bot = telebot.TeleBot(token=token)
 
 
@@ -85,13 +83,7 @@ def func(message):
 bot.polling(none_stop=True)
 
 
-#bot = telebot.TeleBot(token=token)
 
-#@bot.message_handler(commands=['start','help'])
-#def start_message(message):
-    #reply = 'Привет, дорогой студент!\n\n' \
-    #        'Это бот, который поможет тебе развить навыки IT-специалиста и начать карьеру.\n\n'
-    #bot.send_message(message.chat.id, reply)
 
 
 
